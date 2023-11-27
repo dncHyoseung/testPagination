@@ -1,0 +1,59 @@
+.border-bottom {
+  border-bottom: 2px solid #c0b7b7;
+}
+
+.right {
+  margin-top: 10px;
+  display: flex;
+  justify-content: right;
+}
+
+.center {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.btn-black {
+  background-color: black;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-white {
+  background-color: white;
+  color: black;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-gray {
+  background-color: gray;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #333;
+}
+
+th {
+  padding: 10px 50px;
+}
+tr {
+  background-color: #c0b7b7;
+}
+td {
+  text-align: center;
+}
+.boldFont {
+  font-size: large;
+  font-weight: bold;
+}
+.gap-50 {
+  gap: 50px;
+}
