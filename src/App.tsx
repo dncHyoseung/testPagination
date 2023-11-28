@@ -17,23 +17,27 @@ export interface dataProps {
 }
 
 function App() {
+  // console.log("updated");
   const [dataArray, setDataArray] = useState<dataProps[]>([]);
   const [totalList, setListPage] = useState(0);
 
   const [offset, setOffset] = useState(0);
-  const limit = 5; //기본값 20이지만 페이지네이션 test로 5로 변수지정
+  const limit = 3; //기본값 20이지만 페이지네이션 test로 5로 변수지정
 
   useEffect(() => {
     const fetchDataAsync = async () => {
       try {
-        const data = await fetchData(offset, limit);
-        const dataArray = data?.data?.data?.list;
-        const totalCount = data?.data?.data.total_count;
+        const response = await fetchData(offset, limit);
+        const data = response?.data?.data;
 
-        setListPage(totalCount);
-        setDataArray(dataArray);
-      } catch (error) {
-        console.error(error);
+        if (data) {
+          const { list: dataArray, total_count: totalCount } = data;
+
+          setListPage(totalCount);
+          setDataArray(dataArray);
+        }
+      } catch (err) {
+        console.error(err);
       }
     };
 

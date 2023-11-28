@@ -26,7 +26,7 @@ const Product: React.FC<ProductProps> = ({ dataArray }) => {
               <td>{item.type === 0 ? "일반" : "추가 테스트"}</td>
               <td>{item.title}</td>
               <td>
-                {item.plan_min_count}~
+                {item.plan_min_count ? `${item.plan_min_count}~` : ""}
                 {item.plan_max_count !== null ? item.plan_max_count : 0}명 까지
               </td>
               <td>{item.pr_original_price}원</td>
